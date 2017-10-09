@@ -39,7 +39,7 @@ if((b.head>=b.buffer)&&(b.head<=(b.buffer+(MAX_BUFFER)))){
 else
 	*err=BUFFER_OVERRUN;
 	return -1;
-}//TARKISTA EHTOJA
+}
 
 int16_t add_char_to_buffer(struct buffer_type *b, uint8_t c, int16_t *err){
 int16_t i;
@@ -47,7 +47,7 @@ int16_t i;
 b->head++;
 do{
 	i=get_buffer_status(*b,err);
-	printf("\n%x %d %x",b->head,i,b->tail);
+	
 if(i==-3){
 	get_string_from_buffer(b,data_table,5, err);
 	}
